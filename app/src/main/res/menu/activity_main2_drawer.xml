@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/initiatives_item"
+            android:title="Initiatives" />
+        <item android:id="@+id/ideate_item"
+            android:title="Ideate" />
+        <item android:id="@+id/competitions_item"
+            android:title="Competitions" />
+        <item android:id="@+id/workshops_item"
+            android:title="Workshops" />
+        <item android:id="@+id/lectures_item"
+            android:title="Lectures" />
+        <item android:id="@+id/summit_item"
+            android:title="Summit" />
+        <item android:id="@+id/exhibitions_item"
+            android:title="Exhibitions" />
+        <item android:id="@+id/technoholix_item"
+            android:title="Technoholix" />
+        <item android:id="@+id/ozone_item"
+            android:title="Ozone" />
+    </group>
+
+
+</menu>
