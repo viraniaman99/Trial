@@ -3,6 +3,7 @@ package org.techfest.trial;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,7 +18,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class Main2Activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, CompetitionsFragment.OnFragmentInteractionListener,
+        ExhibitionsFragment.OnFragmentInteractionListener,
+        IdeateFragment.OnFragmentInteractionListener,
+        InitiativesFragment.OnFragmentInteractionListener,
+        LecturesFragment.OnFragmentInteractionListener,
+        OzoneFragment.OnFragmentInteractionListener,
+        SummitFragment.OnFragmentInteractionListener,
+        TechnoholixFragment.OnFragmentInteractionListener,
+        WorkshopsFragment.OnFragmentInteractionListener
+{
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

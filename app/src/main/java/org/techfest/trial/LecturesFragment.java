@@ -58,7 +58,7 @@ public class LecturesFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        getActivity().getActionBar().setTitle("Lectures");
+        getActivity().setTitle("Lectures");
 
     }
 
