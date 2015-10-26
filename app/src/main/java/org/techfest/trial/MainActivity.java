@@ -41,7 +41,7 @@ public class MainActivity extends FragmentActivity {
         ListViewItem listViewItem = new ListViewItem("0", items);
         listViewItems.add(listViewItem);
 
-        ListViewAdapter listViewAdapter = new ListViewAdapter(getSupportFragmentManager(), listViewItems);
+        ListViewAdapter listViewAdapter = new ListViewAdapter(this, listViewItems);
         listView.setAdapter(listViewAdapter);
 
     }

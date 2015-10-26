@@ -57,19 +57,19 @@ public class Main2Activity extends AppCompatActivity
                 fragment = new CompetitionsFragment();
                 break;
             case "ExhibitionsFragment":
-                fragment = new CompetitionsFragment();
+                fragment = new ExhibitionsFragment();
                 break;
             case "IdeateFragment":
-                fragment = new CompetitionsFragment();
+                fragment = new IdeateFragment();
                 break;
             case "InitiativesFragment":
-                fragment = new CompetitionsFragment();
+                fragment = new InitiativesFragment();
                 break;
             case "LecturesFragment":
-                fragment = new CompetitionsFragment();
+                fragment = new LecturesFragment();
                 break;
             case "OzoneFragment":
-                fragment = new CompetitionsFragment();
+                fragment = new OzoneFragment();
                 break;
             default:
                 fragment = new CompetitionsFragment();

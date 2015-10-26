@@ -1,5 +1,6 @@
 package org.techfest.trial;
 
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
@@ -21,10 +22,11 @@ public class ListViewAdapter extends BaseAdapter {
     ArrayList<ListViewItem> listViewItems;
     int count;
 
-    public ListViewAdapter(FragmentManager fragmentManager, ArrayList<ListViewItem> items) {
-        this.fragmentManager = fragmentManager;
+    public ListViewAdapter(FragmentActivity fragmentActivity, ArrayList<ListViewItem> items) {
+        this.fragmentManager = fragmentActivity.getSupportFragmentManager();
         listViewItems = items;
         this.count=items.size();
+        context = fragmentActivity;
     }
 
     @Override
@@ -51,6 +53,6 @@ public class ListViewAdapter extends BaseAdapter {
         ViewPagerAdapter adapter = new ViewPagerAdapter(fragmentManager, listViewItems.get(position).getViewPagerItems());
         viewPager.setAdapter(adapter);
 
-        return null;
+        return currentView;
     }
 }

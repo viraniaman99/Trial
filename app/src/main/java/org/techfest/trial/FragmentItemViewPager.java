@@ -48,11 +48,11 @@ public class FragmentItemViewPager extends Fragment
             @Override
             public void onClick(View v) {
                 try {
-                    finalFrag = Class.forName(className);
+                    finalFrag = Class.forName(className +".Main2Activity");
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
-                Intent intent = new Intent(getActivity(), finalFrag);
+                Intent intent = new Intent(getContext(), finalFrag);
                 intent.putExtra("FRAG", fragName);
                 intent.putExtra("PATH", className);
                 startActivity(intent);
