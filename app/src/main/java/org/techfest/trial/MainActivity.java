@@ -27,9 +27,22 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<ListViewItem> listViewItems;
+        ArrayList<ListViewItem> listViewItems = new ArrayList<>();
         ListView listView =  (ListView) findViewById(R.id.listView);
 
+        ArrayList<ViewPagerItem> items = new ArrayList<>();
+        items.add(new ViewPagerItem(R.drawable.img1, "org.techfest.trial", "CompetitionsFragment"));
+        items.add(new ViewPagerItem(R.drawable.img2, "org.techfest.trial", "ExhibitionsFragment"));
+        items.add(new ViewPagerItem(R.drawable.img3, "org.techfest.trial", "IdeateFragment"));
+        items.add(new ViewPagerItem(R.drawable.img4, "org.techfest.trial", "InitiativesFragment"));
+        items.add(new ViewPagerItem(R.drawable.img5, "org.techfest.trial", "LecturesFragment"));
+        items.add(new ViewPagerItem(R.drawable.img6, "org.techfest.trial", "OzoneFragment"));
+
+        ListViewItem listViewItem = new ListViewItem("0", items);
+        listViewItems.add(listViewItem);
+
+        ListViewAdapter listViewAdapter = new ListViewAdapter(getSupportFragmentManager(), listViewItems);
+        listView.setAdapter(listViewAdapter);
 
     }
 }

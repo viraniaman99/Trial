@@ -3,6 +3,7 @@ package org.techfest.trial;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,6 +17,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Objects;
 
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, CompetitionsFragment.OnFragmentInteractionListener,
@@ -38,6 +43,42 @@ public class Main2Activity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        Intent intent = getIntent();
+        String fragToOpen = intent.getStringExtra("FRAG");
+        String pathToFrag = intent.getStringExtra("PATH");
+
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = null;
+
+        switch (fragToOpen)
+        {
+            case "CompetitionsFragment":
+                fragment = new CompetitionsFragment();
+                break;
+            case "ExhibitionsFragment":
+                fragment = new CompetitionsFragment();
+                break;
+            case "IdeateFragment":
+                fragment = new CompetitionsFragment();
+                break;
+            case "InitiativesFragment":
+                fragment = new CompetitionsFragment();
+                break;
+            case "LecturesFragment":
+                fragment = new CompetitionsFragment();
+                break;
+            case "OzoneFragment":
+                fragment = new CompetitionsFragment();
+                break;
+            default:
+                fragment = new CompetitionsFragment();
+        }
+
+        fragmentTransaction.replace(R.id.content, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

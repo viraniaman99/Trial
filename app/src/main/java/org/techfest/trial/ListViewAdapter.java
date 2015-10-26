@@ -1,7 +1,8 @@
 package org.techfest.trial;
 
-import android.app.FragmentManager;
+import android.support.v4.app.FragmentManager;
 import android.content.Context;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,13 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
+        View currentView = View.inflate(context, R.layout.custom_row_main, null);
+        final ViewPager viewPager = (ViewPager) currentView.findViewById(R.id.pager);
+        viewPager.setId(position + 1);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(fragmentManager, listViewItems.get(position).getViewPagerItems());
+        viewPager.setAdapter(adapter);
+
         return null;
     }
 }
