@@ -1,5 +1,6 @@
 package org.techfest.trial;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by DELL on 25-Oct-15.
@@ -45,10 +49,11 @@ public class FragmentItemViewPager extends Fragment
         ((LinearLayout) view.findViewById(R.id.viewpager_item)).setBackgroundResource(image);
         ((LinearLayout) view.findViewById(R.id.viewpager_item)).setOnClickListener(new View.OnClickListener() {
             Class finalFrag;
+
             @Override
             public void onClick(View v) {
                 try {
-                    finalFrag = Class.forName(className +".Main2Activity");
+                    finalFrag = Class.forName(className + ".Main2Activity");
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -58,6 +63,7 @@ public class FragmentItemViewPager extends Fragment
                 startActivity(intent);
             }
         });
+
         return view;
     }
 

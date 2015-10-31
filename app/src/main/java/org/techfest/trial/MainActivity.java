@@ -19,6 +19,8 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends FragmentActivity {
 
@@ -30,19 +32,24 @@ public class MainActivity extends FragmentActivity {
         ArrayList<ListViewItem> listViewItems = new ArrayList<>();
         ListView listView =  (ListView) findViewById(R.id.listView);
 
-        ArrayList<ViewPagerItem> items = new ArrayList<>();
-        items.add(new ViewPagerItem(R.drawable.img1, "org.techfest.trial", "CompetitionsFragment"));
-        items.add(new ViewPagerItem(R.drawable.img2, "org.techfest.trial", "ExhibitionsFragment"));
-        items.add(new ViewPagerItem(R.drawable.img3, "org.techfest.trial", "IdeateFragment"));
-        items.add(new ViewPagerItem(R.drawable.img4, "org.techfest.trial", "InitiativesFragment"));
-        items.add(new ViewPagerItem(R.drawable.img5, "org.techfest.trial", "LecturesFragment"));
-        items.add(new ViewPagerItem(R.drawable.img6, "org.techfest.trial", "OzoneFragment"));
+        for(int i=0;i<10;i++)
+        {
+            ArrayList<ViewPagerItem> items = new ArrayList<>();
+            items.add(new ViewPagerItem(R.drawable.img1, "org.techfest.trial", "CompetitionsFragment"));
+            items.add(new ViewPagerItem(R.drawable.img2, "org.techfest.trial", "ExhibitionsFragment"));
+            items.add(new ViewPagerItem(R.drawable.img3, "org.techfest.trial", "IdeateFragment"));
+            items.add(new ViewPagerItem(R.drawable.img4, "org.techfest.trial", "InitiativesFragment"));
+            items.add(new ViewPagerItem(R.drawable.img5, "org.techfest.trial", "LecturesFragment"));
+            items.add(new ViewPagerItem(R.drawable.img6, "org.techfest.trial", "OzoneFragment"));
 
-        ListViewItem listViewItem = new ListViewItem("0", items);
-        listViewItems.add(listViewItem);
+            ListViewItem listViewItem = new ListViewItem(String.valueOf(i), items);
+            listViewItems.add(listViewItem);
+        }
 
         ListViewAdapter listViewAdapter = new ListViewAdapter(this, listViewItems);
         listView.setAdapter(listViewAdapter);
 
+
     }
+
 }
